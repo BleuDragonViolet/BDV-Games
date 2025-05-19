@@ -3,8 +3,6 @@
 > **Un serveur Minecraft unique mêlant cache-cache, PvP, karting et chasse aux creepers… sous un ciel violet crépusculaire.**  
 > Créé avec passion par [@bleudragonviolet](https://github.com/bleudragonviolet) 🐉
 
-![GitHub repo size](https://img.shields.io/github/repo-size/bleudragonviolet/dragonviolet-site?color=9153c9&style=flat-square)
-![GitHub last commit](https://img.shields.io/github/last-commit/bleudragonviolet/dragonviolet-site?color=ab60ea&style=flat-square)
 ![Minecraft Java + Bedrock](https://img.shields.io/badge/Minecraft-Java%20%2B%20Bedrock-6e48aa?style=flat-square&logo=minecraft)
 
 ---
@@ -47,3 +45,36 @@
 git clone https://github.com/BleuDragonViolet/BDV-Games.git
 cd BDV-Games
 open index.html
+```
+---
+
+## ☁️ Héberger le site gratuitement
+
+Tu peux héberger le site sur :
+
+* [GitHub Pages](https://pages.github.com/)
+* [Vercel](https://vercel.com/)
+* [Netlify](https://netlify.com/)
+
+💡 Le site est en **HTML/CSS/JS**, aucun backend requis.
+
+---
+
+## 🧙‍♂️ Créé par
+
+👤 **BleuDragonViolet**
+📦 Repo : [`github.com/BleuDragonViolet/BDV-Games`](https://github.com/BleuDragonViolet/BDV-Games)
+
+> *“Le crépuscule est le moment parfait... pour jouer !”*
+
+---
+
+## 📬 Contact
+
+📨 À venir : lien Discord, formulaire de contact, suggestions !
+
+---
+
+💜 Merci à ceux qui testent, donnent leur avis, ou hébergent le serveur eux-mêmes. Toute critique est la bienvenue !
+
+```
