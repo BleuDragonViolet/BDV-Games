@@ -41,9 +41,9 @@
 
 ---
 
-## 🚀 Lancer le site en local
+## 🧪 Lancer le site en local
 
 ```bash
-git clone https://github.com/bleudragonviolet/dragonviolet-site.git
-cd dragonviolet-site
+git clone https://github.com/BleuDragonViolet/BDV-Games.git
+cd BDV-Games
 open index.html
