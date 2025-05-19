@@ -48,18 +48,6 @@ open index.html
 ```
 ---
 
-## ☁️ Héberger le site gratuitement
-
-Tu peux héberger le site sur :
-
-* [GitHub Pages](https://pages.github.com/)
-* [Vercel](https://vercel.com/)
-* [Netlify](https://netlify.com/)
-
-💡 Le site est en **HTML/CSS/JS**, aucun backend requis.
-
----
-
 ## 🧙‍♂️ Créé par
 
 👤 **BleuDragonViolet**
@@ -71,7 +59,7 @@ Tu peux héberger le site sur :
 
 ## 📬 Contact
 
-📨 À venir : lien Discord, formulaire de contact, suggestions !
+Lien Discord : https://discord.gg/xquSZ62kug
 
 ---
 
