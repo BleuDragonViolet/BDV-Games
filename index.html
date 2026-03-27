@@ -5,306 +5,172 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Serveur Minecraft Mini-Jeux</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Titillium+Web&display=swap"
-        rel="stylesheet">
-    <style>
-        :root {
-            --violet-dark: #1b1028;
-            --violet: #8e44ad;
-            --accent: #c678dd;
-            --white: #ffffff;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Titillium Web', sans-serif;
-            background: linear-gradient(to bottom, #100418, #1b1028);
-            color: var(--white);
-            overflow-x: hidden;
-        }
-
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('https://www.transparenttextures.com/patterns/stardust.png') repeat;
-            opacity: 0.05;
-            z-index: 0;
-        }
-
-        header {
-            background: linear-gradient(180deg, #1b1028, transparent);
-            text-align: center;
-            padding: 4rem 2rem 2rem;
-            z-index: 1;
-            position: relative;
-        }
-
-        header h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 3.5rem;
-            color: var(--accent);
-            text-shadow: 0 0 15px var(--accent);
-        }
-
-        header a.button {
-            display: inline-block;
-            margin-top: 2rem;
-            padding: 0.8rem 1.5rem;
-            background: var(--accent);
-            color: #1b1028;
-            text-decoration: none;
-            border-radius: 10px;
-            font-weight: bold;
-            box-shadow: 0 0 12px var(--accent);
-            transition: 0.3s;
-        }
-
-        header a.button:hover {
-            background: #ffffff;
-            color: var(--violet-dark);
-        }
-
-        nav {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            padding: 1rem;
-            background: #100418e6;
-            position: sticky;
-            top: 0;
-            backdrop-filter: blur(8px);
-            z-index: 10;
-        }
-
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent);
-            text-shadow: 0 0 5px var(--accent);
-        }
-
-        section {
-            padding: 4rem 2rem;
-            max-width: 1100px;
-            margin: auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        section h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 2.2rem;
-            color: var(--accent);
-            margin-bottom: 2rem;
-            text-align: center;
-        }
-
-        .glass-card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 0 20px rgba(198, 120, 221, 0.2);
-            transition: transform 0.3s;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 0 30px rgba(198, 120, 221, 0.4);
-        }
-
-        .mini-jeux {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 2rem;
-        }
-
-        ul,
-        ol {
-            padding-left: 1.2rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-
-        footer {
-            background: #0a0312;
-            padding: 2rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: #999;
-        }
-
-        a {
-            color: var(--accent);
-        }
-
-        section.fade {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.8s ease;
-        }
-
-        section.fade.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        @media (max-width: 600px) {
-            header h1 {
-                font-size: 2rem;
-            }
-        }
-
-        ol li,
-        ul li {
-            margin-bottom: 0.75rem;
-            line-height: 1.6;
-        }
-
-        mark {
-            background-color: #c678dd33;
-            color: #ffffff;
-            padding: 0.1em 0.3em;
-            border-radius: 4px;
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <header>
-        <h1>🎮 Serveur Minecraft Mini-Jeux</h1>
-        <a class="button" href="MiniJeuxBDV.zip"
-            target="_blank">📦 Télécharger la map</a>
+    <div class="noise"></div>
+    <canvas id="particles"></canvas>
+
+    <!-- HERO -->
+    <header id="hero">
+        <div class="hero-inner">
+            <div class="hero-badge">Java 1.21.1 · Spigot</div>
+            <h1>
+                <span class="line1">Serveur</span>
+                <span class="line2">Mini-Jeux</span>
+            </h1>
+            <p class="hero-sub">5 mini-jeux, des amis, du chaos. Télécharge la map et joue !</p>
+            <a class="btn-main" href="MiniJeuxBDV.zip" target="_blank">
+                <span class="btn-icon">📦</span>
+                Télécharger la map
+            </a>
+        </div>
+        <div class="hero-deco deco-1"></div>
+        <div class="hero-deco deco-2"></div>
+        <div class="hero-deco deco-3"></div>
     </header>
 
-    <nav>
-        <a href="#about">À propos</a>
-        <a href="#jeux">Mini-jeux</a>
-        <a href="#plugins">Plugins</a>
-        <a href="#compat">Compatibilité</a>
-        <a href="#hebergement">Hébergement</a>
+    <!-- NAV -->
+    <nav id="navbar">
+        <div class="nav-inner">
+            <a href="#about">À propos</a>
+            <a href="#jeux">Mini-jeux</a>
+            <a href="#plugins">Plugins</a>
+            <a href="#hebergement">Hébergement</a>
+        </div>
     </nav>
 
+    <!-- À PROPOS -->
     <section id="about" class="fade">
+        <div class="section-label">01 — Introduction</div>
         <h2>À propos</h2>
-        <div class="glass-card">
-            <p>Bienvenue sur mon tout premier serveur Minecraft Mini-Jeux ! Développé sur la version 1.21.1 Java et
-                hébergé via Aternos, il est fluide, fun, et accessible à tous grâce à Geyser qui permet de jouer en Java
-                et Bedrock ensemble !</p>
+        <div class="about-grid">
+            <div class="glass-card about-card">
+                <div class="card-icon">🎮</div>
+                <h3>Mon premier serveur</h3>
+                <p>Développé de A à Z sur Minecraft Java <strong>1.21.1</strong>, hébergé via Aternos. Fluide, fun, et accessible à tous.</p>
+            </div>
+            <div class="glass-card about-card">
+                <div class="card-icon">⚙️</div>
+                <h3>Technique</h3>
+                <p>Basé sur <strong>Spigot/Bukkit</strong> avec une sélection de plugins soigneusement choisis pour une expérience optimale.</p>
+            </div>
+            <div class="glass-card about-card">
+                <div class="card-icon">🗺️</div>
+                <h3>Map custom</h3>
+                <p>Une map entièrement construite à la main, pensée pour accueillir chaque mini-jeu dans les meilleures conditions.</p>
+            </div>
         </div>
     </section>
 
+    <!-- MINI-JEUX -->
     <section id="jeux" class="fade">
+        <div class="section-label">02 — Modes de jeu</div>
         <h2>Mini-Jeux</h2>
-        <div class="mini-jeux">
-            <div class="glass-card"><strong>🕵️‍♂️ Cache-cache :</strong> Une map remplie de cachettes pour bien galérer
-                à trouver les autres !</div>
-            <div class="glass-card"><strong>💣 Déaoudre :</strong> Jeu original avec 3 niveaux croissants en difficulté.
+        <div class="games-grid">
+            <div class="game-card fade-child">
+                <div class="game-emoji">🕵️</div>
+                <h3>Cache-cache</h3>
+                <p>Une map remplie de cachettes tordues. Bonne chance pour tous les trouver !</p>
+                <div class="game-tag">Stratégie</div>
             </div>
-            <div class="glass-card"><strong>🏎️ Carting :</strong> Courses folles entre amis pour tester vos réflexes !
+            <div class="game-card fade-child">
+                <div class="game-emoji">💣</div>
+                <h3>Déaoudre</h3>
+                <p>Jeu original avec 3 niveaux de difficulté croissante. Survie garantie non-incluse.</p>
+                <div class="game-tag">Challenge</div>
             </div>
-            <div class="glass-card"><strong>⚔️ PvP :</strong> Une arène compacte pour des duels ou des 3v3 épiques.
+            <div class="game-card fade-child">
+                <div class="game-emoji">🏎️</div>
+                <h3>Carting</h3>
+                <p>Courses folles entre amis pour tester vos réflexes et votre maîtrise du rail.</p>
+                <div class="game-tag">Course</div>
             </div>
-            <div class="glass-card"><strong>💥 Creeper Hunt :</strong> Une plateforme difficile remplie de creepers à
-                éviter ou combattre !</div>
+            <div class="game-card fade-child">
+                <div class="game-emoji">⚔️</div>
+                <h3>PvP</h3>
+                <p>Une arène compacte pour des duels 1v1 ou des batailles épiques en 3v3.</p>
+                <div class="game-tag">Combat</div>
+            </div>
+            <div class="game-card fade-child">
+                <div class="game-emoji">💥</div>
+                <h3>Creeper Hunt</h3>
+                <p>Une plateforme infernale remplie de creepers à éviter… ou à affronter.</p>
+                <div class="game-tag">Survie</div>
+            </div>
         </div>
     </section>
 
+    <!-- PLUGINS -->
     <section id="plugins" class="fade">
+        <div class="section-label">03 — Stack technique</div>
         <h2>Plugins utilisés</h2>
-        <div class="glass-card">
-            <ul>
-                <li>Chunky</li>
-                <li>CommandPanels</li>
-                <li>EventSounds</li>
-                <li>Floodgate</li>
-                <li>Geyser-Spigot</li>
-                <li>GeyserSkinManager</li>
-                <li>LuckPerms</li>
-                <li>SkinsRestorer</li>
-                <li>bStats / PluginMetrics</li>
-                <li>AUpdater</li>
-            </ul>
+        <div class="plugins-grid">
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>Chunky</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>CommandPanels</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>EventSounds</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>LuckPerms</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>SkinsRestorer</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>bStats / PluginMetrics</div>
+            <div class="plugin-item glass-card"><span class="plug-dot"></span>AUpdater</div>
         </div>
     </section>
 
-    <section id="compat" class="fade">
-        <h2>Compatibilité</h2>
-        <div class="glass-card">
-            <p>🖥️ Le serveur est compatible <strong>Java & Bedrock</strong> grâce à Geyser. Peu importe votre version,
-                vous pouvez jouer ensemble !</p>
-        </div>
-    </section>
-
+    <!-- HÉBERGEMENT -->
     <section id="hebergement" class="fade">
-        <h2>🌐 Héberger la map gratuitement sur Aternos</h2>
-        <div class="glass-card">
-            <p>Voici comment héberger facilement le serveur chez toi avec <strong>Aternos</strong>, une plateforme
-                gratuite et fiable :</p>
-            <ol>
-                <li><strong>Va sur :</strong> <a href="https://aternos.org/" target="_blank">https://aternos.org/</a> et
-                    connecte-toi ou crée un compte.</li>
-                <li><strong>Crée un serveur Java</strong> en choisissant la version <mark>Spigot/Bukkit 1.21.1</mark>.</li>
-
-                <li>Va dans <strong>“Monde”</strong> → clique sur <strong>“Téléverser”</strong> et choisis le fichier
-                    ZIP de la map :</li>
-                <ul>
-                    <li>🔗 <a href="MiniJeuxBDV.zip"
-                            target="_blank">Télécharger la map</a></li>
-                </ul>
-                <li>Rends-toi dans <strong>“Plugins”</strong> et ajoute ceux-ci :
-                    <ul>
-                        <li>✔ Geyser-Spigot + Floodgate</li>
-                        <li>✔ LuckPerms</li>
-                        <li>✔ SkinsRestorer</li>
-                        <li>✔ Chunky, CommandPanels, EventSounds...</li>
-                    </ul>
+        <div class="section-label">04 — Guide</div>
+        <h2>Héberger sur Aternos</h2>
+        <div class="glass-card steps-card">
+            <p class="steps-intro">Héberge ton propre serveur gratuitement avec <strong>Aternos</strong> en quelques étapes :</p>
+            <ol class="steps-list">
+                <li>
+                    <span class="step-num">01</span>
+                    <div>
+                        <strong>Crée un compte</strong> sur <a href="https://aternos.org/" target="_blank">aternos.org</a> et connecte-toi.
+                    </div>
                 </li>
-                <li><strong>Redémarre ton serveur</strong> 🟢</li>
+                <li>
+                    <span class="step-num">02</span>
+                    <div>
+                        <strong>Crée un serveur Java</strong> en choisissant la version <mark>Spigot/Bukkit 1.21.1</mark>.
+                    </div>
+                </li>
+                <li>
+                    <span class="step-num">03</span>
+                    <div>
+                        Va dans <strong>Monde → Téléverser</strong> et importe le fichier ZIP :
+                        <br><a href="MiniJeuxBDV.zip" target="_blank">📦 Télécharger la map</a>
+                    </div>
+                </li>
+                <li>
+                    <span class="step-num">04</span>
+                    <div>
+                        Va dans <strong>Plugins</strong> et installe :
+                        LuckPerms, SkinsRestorer, Chunky, CommandPanels, EventSounds…
+                    </div>
+                </li>
+                <li>
+                    <span class="step-num">05</span>
+                    <div>
+                        <strong>Démarre le serveur</strong> 🟢 et partage l'IP à tes amis !
+                    </div>
+                </li>
             </ol>
-            <p>✨ Tu es maintenant prêt à jouer sur ton propre serveur mini-jeux, en solo ou avec tes amis !</p>
-            <p><strong>Java et Bedrock</strong> sont compatibles automatiquement grâce à Geyser.</p>
         </div>
     </section>
-
 
     <footer>
-        <p>✨ Merci de visiter ! N'hésite pas à partager ton avis ou rejoindre le serveur pour t'amuser !</p>
+        <div class="footer-inner">
+            <p class="footer-title">Serveur Minecraft Mini-Jeux</p>
+            <p>Java 1.21.1 · Spigot · Hébergé sur Aternos</p>
+            <p class="footer-note">Merci de visiter ! N'hésite pas à partager et à t'amuser 🎮</p>
+        </div>
     </footer>
 
-    <script>
-        const faders = document.querySelectorAll(".fade");
-        const appear = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("visible");
-                }
-            });
-        }, { threshold: 0.2 });
-
-        faders.forEach(el => appear.observe(el));
-    </script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>
